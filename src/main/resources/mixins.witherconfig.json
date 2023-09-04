@@ -1,7 +1,7 @@
 {
   "required": true,
   "minVersion": "0.8",
-  "package": "io.redstudioragnarok.Replace.mixin",
+  "package": "io.redstudioragnarok.witherconfig.mixin",
   "compatibilityLevel": "JAVA_8",
   "refmap": "mixins.Replace.refmap.json",
   "client": [
@@ -10,5 +10,7 @@
     "defaultRequire": 1
   },
   "mixins": [
+    "EntityWitherMixin",
+    "EntityWitherSkullMixin"
   ]
 }

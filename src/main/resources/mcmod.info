@@ -1,12 +1,12 @@
 [
   {
     "modid": "${id}",
-    "name": "",
+    "name": "Wither Config",
     "description": "",
     "version": "${version}",
-    "url": "",
+    "url": "https://www.curseforge.com/minecraft/mc-mods/witherconfig",
     "authorList": ["Red Studio"],
     "credits": "Desoroxxx",
-    "logoFile": "assets/valkyrie/textures/logo.png"
+    "logoFile": "assets/witherconfig/textures/logo.png"
   }
 ]

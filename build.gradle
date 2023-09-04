@@ -34,7 +34,7 @@ minecraft {
 
     username = "Desoroxxx"
 
-    extraRunJvmArguments.addAll("-Xmx4G", "-Dforge.logging.console.level=debug", "-Dmixin.hotSwap=true", "-Dmixin.checks.interfaces=true", "-Dmixin.debug.export=true", "-Dfml.coreMods.load=io.redstudioragnarok.${project.id}.asm.ReplacePlugin")
+    extraRunJvmArguments.addAll("-Xmx4G", "-Dforge.logging.console.level=debug", "-Dmixin.hotSwap=true", "-Dmixin.checks.interfaces=true", "-Dmixin.debug.export=true", "-Dfml.coreMods.load=io.redstudioragnarok.${project.id}.asm.WitherConfigPlugin")
 
     injectedTags.put("ID", project.id)
     injectedTags.put("VERSION", project.version)
@@ -91,11 +91,6 @@ dependencies {
     annotationProcessor (mixin) { transitive = false }
 }
 
-def at = project.files("src/main/resources/META-INF/${project.id}_at.cfg")
-
-tasks.deobfuscateMergedJarToSrg.accessTransformerFiles.from(at)
-tasks.srgifyBinpatchedJar.accessTransformerFiles.from(at)
-
 // Replace version and id in `mcmod.info`
 processResources {
     inputs.property "id", project.id
@@ -113,7 +108,7 @@ jar {
     manifest.attributes([
             "ModSide": "BOTH",
             "FMLAT": "${project.id}_at.cfg",
-            "FMLCorePlugin": "io.redstudioragnarok.${project.id}.asm.ReplacePlugin",
+            "FMLCorePlugin": "io.redstudioragnarok.${project.id}.asm.WitherConfigPlugin",
             "FMLCorePluginContainsFMLMod": true,
             "ForceLoadAsMod": true
     ])
