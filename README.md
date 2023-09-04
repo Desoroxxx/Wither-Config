@@ -8,11 +8,15 @@
 [![Gradle](https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/cozy/built-with/gradle_vector.svg)](https://gradle.org/)
 [![Forge](https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/cozy/supported/forge_vector.svg)](http://files.minecraftforge.net/maven/net/minecraftforge/forge/index_1.12.2.html)
 
-# Replace
+# Wither Config
 
 The template has a lot of `Replace` that you need to replace, also it has everything you could need so some stuff will need to be removed.
 
-## Want to have your own mod or support me?
+---
+
+[![BisectHostingPromoBanner](https://www.bisecthosting.com/partners/custom-banners/d410513a-9aee-467a-96eb-88eb0976af9d.webp)](https://bisecthosting.com/Desoroxxx?r=Wither+Config+GitHub)
+
+# Want to have your own mod or support me?
 
 If you're looking for a mod but don't have the development skills or time, consider commissioning me!
 My commissions are currently open and I would be happy to create a custom mod to fit your needs as long as you provide assets.
