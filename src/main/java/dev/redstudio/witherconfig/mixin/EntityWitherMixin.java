@@ -1,12 +1,18 @@
-package io.redstudioragnarok.witherconfig.mixin;
+package dev.redstudio.witherconfig.mixin;
 
-import io.redstudioragnarok.witherconfig.config.WitherConfigConfig;
+import dev.redstudio.witherconfig.config.WitherConfigConfig;
+import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.boss.EntityWither;
 import net.minecraft.entity.monster.EntityMob;
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
+import net.minecraftforge.event.ForgeEventFactory;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
+import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.ModifyArg;
@@ -23,6 +29,8 @@ public abstract class EntityWitherMixin extends EntityMob {
     @Shadow public abstract int getWatchedTargetId(final int head);
 
     @Shadow public abstract boolean isArmored();
+
+    @Shadow private int blockBreakCounter;
 
     private EntityWitherMixin(final World world) {
         super(world);
@@ -73,9 +81,12 @@ public abstract class EntityWitherMixin extends EntityMob {
         if (target == null)
             return;
 
+        if (target instanceof EntityPlayer && WitherConfigConfig.common.breakBlocksWhenTargetingPlayer)
+            wither_Config$destroyBlocks();
+
         final double movementSpeed = WitherConfigConfig.common.movementSpeed;
 
-        if (posY < target.posY || !isArmored() && posY < target.posY + 5) {
+        if (posY < target.posY || !isArmored() && posY < target.posY + WitherConfigConfig.common.unarmoredFlyHeight) {
             if (motionY < 0)
                 motionY = 0;
 
@@ -89,6 +100,37 @@ public abstract class EntityWitherMixin extends EntityMob {
         if (distanceToTarget > WitherConfigConfig.common.followDistance) {
             motionX += (deltaX / distanceToTarget * 0.5 - motionX) * movementSpeed;
             motionZ += (deltaZ / distanceToTarget * 0.5 - motionZ) * movementSpeed;
+        }
+    }
+
+    @Unique
+    private void wither_Config$destroyBlocks() {
+        if (net.minecraftforge.event.ForgeEventFactory.getMobGriefingEvent(this.world, this)) {
+            final int x = MathHelper.floor(posX);
+            final int y = MathHelper.floor(posY);
+            final int z = MathHelper.floor(posZ);
+
+            boolean flag = false;
+
+            for (int xOffset = -1; xOffset <= 1; ++xOffset) {
+                for (int zOffset = -1; zOffset <= 1; ++zOffset) {
+                    for (int yOffset = 0; yOffset <= 4; ++yOffset) {
+                        final int currentX = x + xOffset;
+                        final int currentY = y + yOffset;
+                        final int currentZ = z + zOffset;
+
+                        final BlockPos blockPos = new BlockPos(currentX, currentY, currentZ);
+                        final IBlockState blockState = this.world.getBlockState(blockPos);
+
+                        if (blockState.getBlock().canEntityDestroy(blockState, world, blockPos, this) && ForgeEventFactory.onEntityDestroyBlock(this, blockPos, blockState))
+                            flag = this.world.destroyBlock(blockPos, true) || flag;
+                    }
+                }
+            }
+
+            if (flag) {
+                this.world.playEvent(null, 1022, new BlockPos(this), 0);
+            }
         }
     }
 }

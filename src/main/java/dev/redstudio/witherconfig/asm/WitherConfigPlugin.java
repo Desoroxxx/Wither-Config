@@ -1,4 +1,4 @@
-package io.redstudioragnarok.witherconfig.asm;
+package dev.redstudio.witherconfig.asm;
 
 import net.minecraftforge.fml.relauncher.IFMLLoadingPlugin;
 import zone.rong.mixinbooter.IEarlyMixinLoader;
@@ -9,7 +9,7 @@ import java.util.Map;
 
 @IFMLLoadingPlugin.Name()
 @IFMLLoadingPlugin.MCVersion("1.12.2")
-@IFMLLoadingPlugin.TransformerExclusions("io.redstudioragnarok.witherconfig.asm")
+@IFMLLoadingPlugin.TransformerExclusions("dev.redstudio.witherconfig.asm")
 public class WitherConfigPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader {
 
     @Override

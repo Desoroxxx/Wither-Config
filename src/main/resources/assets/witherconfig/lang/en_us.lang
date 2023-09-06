@@ -1,0 +1,39 @@
+witherconfig.general.common=Common
+witherconfig.general.common.tooltip=Common configuration for the Wither
+
+witherconfig.general.common.maxhealth=Max Health
+witherconfig.general.common.maxhealth.tooltip=The maximum health of the Wither
+witherconfig.general.common.movementspeed=Movement Speed
+witherconfig.general.common.movementspeed.tooltip=The movement speed of the Wither
+witherconfig.general.common.followrange=Follow Range
+witherconfig.general.common.followrange.tooltip=The range in which the Wither will search for targets
+witherconfig.general.common.armor=Armor
+witherconfig.general.common.armor.tooltip=The armor of the Wither
+witherconfig.general.common.unarmoredflyheight=Unarmored Fly Height
+witherconfig.general.common.unarmoredflyheight.tooltip=The height at which the Wither will fly above the ground while unarmored
+witherconfig.general.common.followdistance=Follow Distance
+witherconfig.general.common.followdistance.tooltip=The target distance between the Wither and it's target
+witherconfig.general.common.breakblockswhentargetingplayer=Break Blocks when Targeting a Player
+witherconfig.general.common.breakblockswhentargetingplayer.tooltip=Whether or not the Wither should attempt to break blocks around it when targeting a player
+
+witherconfig.general.common.summonsequence=Summon Sequence
+witherconfig.general.common.summonsequence.tooltip=Configuration for the Wither summon sequence
+
+witherconfig.general.common.summonsequence.length=Length
+witherconfig.general.common.summonsequence.length.tooltip=The length of the summon sequence, in ticks
+witherconfig.general.common.summonsequence.endexplosionstrength=End Explosion Strength
+witherconfig.general.common.summonsequence.endexplosionstrength.tooltip=The strength of the explosion at the end of the summon sequence, affecting the size of the explosion and the damage it inflict
+
+witherconfig.general.common.skulls=Skulls
+witherconfig.general.common.skulls.tooltip=Configuration for the Wither Skulls
+
+witherconfig.general.common.skulls.damage=Damage
+witherconfig.general.common.skulls.damage.tooltip=The damage that the skulls inflict
+witherconfig.general.common.skulls.magicdamage=Magic Damage
+witherconfig.general.common.skulls.magicdamage.tooltip=The magic damage that the skulls inflict, magic damage is the damage that happens once the Wither that sent the skulls died before the skulls hit something
+witherconfig.general.common.skulls.healonkill=Heal On Kill
+witherconfig.general.common.skulls.healonkill.tooltip=The ammount of heal the Wither should receive when skulls kills an entity
+witherconfig.general.common.skulls.explosionstrength=Explosion Strength
+witherconfig.general.common.skulls.explosionstrength.tooltip=The strength of the explosion of the skulls, affecting the size of the explosion and the damage it inflict
+witherconfig.general.common.skulls.effects=Effects
+witherconfig.general.common.skulls.effects.tooltip=The effects that the explosion of the skulls will inflict

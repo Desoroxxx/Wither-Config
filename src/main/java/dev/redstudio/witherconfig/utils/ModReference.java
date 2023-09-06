@@ -1,6 +1,6 @@
-package io.redstudioragnarok.witherconfig.utils;
+package dev.redstudio.witherconfig.utils;
 
-import io.redstudioragnarok.witherconfig.Tags;
+import dev.redstudio.witherconfig.Tags;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 

@@ -34,7 +34,7 @@ minecraft {
 
     username = "Desoroxxx"
 
-    extraRunJvmArguments.addAll("-Xmx4G", "-Dforge.logging.console.level=debug", "-Dmixin.hotSwap=true", "-Dmixin.checks.interfaces=true", "-Dmixin.debug.export=true", "-Dfml.coreMods.load=io.redstudioragnarok.${project.id}.asm.WitherConfigPlugin")
+    extraRunJvmArguments.addAll("-Xmx4G", "-Dforge.logging.console.level=debug", "-Dmixin.hotSwap=true", "-Dmixin.checks.interfaces=true", "-Dmixin.debug.export=true", "-Dfml.coreMods.load=dev.redstudio.${project.id}.asm.WitherConfigPlugin")
 
     injectedTags.put("ID", project.id)
     injectedTags.put("VERSION", project.version)
@@ -42,7 +42,7 @@ minecraft {
 
 // Generate a my.project.Tags class with the version number as a field
 tasks.injectTags.configure {
-    outputClassName.set("io.redstudioragnarok.${project.id}.Tags")
+    outputClassName.set("dev.redstudio.${project.id}.Tags")
 }
 
 configurations {
@@ -80,9 +80,6 @@ repositories {
 }
 
 dependencies {
-    implementation "Red-Studio-Ragnarok:Red-Core:0.4-Dev-6"
-    sources "Red-Studio-Ragnarok:Red-Core:0.4-Dev-6:sources@jar"
-
     String mixin = modUtils.enableMixins("zone.rong:mixinbooter:8.4", "mixins.${project.id}.refmap.json")
     api (mixin) { transitive = false }
     annotationProcessor "org.ow2.asm:asm-debug-all:5.2"
@@ -107,8 +104,7 @@ processResources {
 jar {
     manifest.attributes([
             "ModSide": "BOTH",
-            "FMLAT": "${project.id}_at.cfg",
-            "FMLCorePlugin": "io.redstudioragnarok.${project.id}.asm.WitherConfigPlugin",
+            "FMLCorePlugin": "dev.redstudio.${project.id}.asm.WitherConfigPlugin",
             "FMLCorePluginContainsFMLMod": true,
             "ForceLoadAsMod": true
     ])

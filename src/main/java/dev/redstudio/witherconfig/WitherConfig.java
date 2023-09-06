@@ -1,10 +1,10 @@
-package io.redstudioragnarok.witherconfig;
+package dev.redstudio.witherconfig;
 
 import net.minecraftforge.fml.common.Mod;
 
-import static io.redstudioragnarok.witherconfig.utils.ModReference.ID;
-import static io.redstudioragnarok.witherconfig.utils.ModReference.NAME;
-import static io.redstudioragnarok.witherconfig.utils.ModReference.VERSION;
+import static dev.redstudio.witherconfig.utils.ModReference.ID;
+import static dev.redstudio.witherconfig.utils.ModReference.NAME;
+import static dev.redstudio.witherconfig.utils.ModReference.VERSION;
 
 //   /$$      /$$ /$$   /$$     /$$                                  /$$$$$$                       /$$$$$$  /$$
 //  | $$  /$ | $$|__/  | $$    | $$                                 /$$__  $$                     /$$__  $$|__/
@@ -17,6 +17,6 @@ import static io.redstudioragnarok.witherconfig.utils.ModReference.VERSION;
 //                                                                                                              /$$  \ $$
 //                                                                                                             |  $$$$$$/
 //                                                                                                              \______/
-@Mod(modid = ID, name = NAME, version = VERSION/*, updateJSON = "https://raw.githubusercontent.com/Red-Studio-Ragnarok/witherconfig/main/update.json"*/)
-public class WitherConfig {
+@Mod(modid = ID, name = NAME, version = VERSION, updateJSON = "https://raw.githubusercontent.com/Desoroxxx/Wither-Config/main/update.json")
+public final class WitherConfig {
 }

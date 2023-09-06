@@ -1,9 +1,9 @@
 {
   "required": true,
   "minVersion": "0.8",
-  "package": "io.redstudioragnarok.witherconfig.mixin",
+  "package": "dev.redstudio.witherconfig.mixin",
   "compatibilityLevel": "JAVA_8",
-  "refmap": "mixins.Replace.refmap.json",
+  "refmap": "mixins.witherconfig.refmap.json",
   "client": [
   ],
   "injectors": {

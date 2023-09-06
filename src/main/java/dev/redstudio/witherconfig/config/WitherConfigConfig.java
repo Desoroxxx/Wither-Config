@@ -1,4 +1,4 @@
-package io.redstudioragnarok.witherconfig.config;
+package dev.redstudio.witherconfig.config;
 
 import net.minecraftforge.common.config.Config;
 import net.minecraftforge.common.config.ConfigManager;
@@ -6,13 +6,13 @@ import net.minecraftforge.fml.client.event.ConfigChangedEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
-import static io.redstudioragnarok.witherconfig.utils.ModReference.ID;
-import static io.redstudioragnarok.witherconfig.utils.ModReference.NAME;
+import static dev.redstudio.witherconfig.utils.ModReference.ID;
+import static dev.redstudio.witherconfig.utils.ModReference.NAME;
 
 @Config(modid = ID, name = NAME)
 public class WitherConfigConfig {
 
-    public static final Common common = new Common(); // Todo: Is this really needed?
+    public static final Common common = new Common();
 
     public static class Common {
 
@@ -25,7 +25,10 @@ public class WitherConfigConfig {
         public double followRange = 40; // Range for the Wither to look for it's target to follow it
         public double armor = 4;
 
-        public double followDistance = 9;
+        public float unarmoredFlyHeight = 5;
+        public float followDistance = 9;
+
+        public boolean breakBlocksWhenTargetingPlayer = false;
 
         public static class SummonSequence {
 
@@ -35,7 +38,12 @@ public class WitherConfigConfig {
 
         public static class Skulls {
 
+            public float damage = 8;
+            public float magicDamage = 5;
+            public float healOnKill = 5;
             public float explosionStrength = 1;
+
+            public String[] effects = new String[]{"minecraft:wither;20;1"};
         }
     }
 
