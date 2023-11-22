@@ -18,6 +18,7 @@ public class WitherConfigConfig {
 
         public final SummonSequence summonSequence = new SummonSequence();
         public final Skulls skulls = new Skulls();
+        public final BoatJailFix boatJailFix = new BoatJailFix();
 
         // The Wither attributes
         public double maxHealth = 300;
@@ -44,6 +45,16 @@ public class WitherConfigConfig {
             public float explosionStrength = 1;
 
             public String[] effects = new String[]{"minecraft:wither;20;1"};
+        }
+
+        public static class BoatJailFix {
+
+            @Config.RequiresMcRestart
+            public boolean enabled = true;
+
+            public byte tickDelay = 5;
+
+            public int range = 7;
         }
     }
 

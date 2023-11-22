@@ -4,6 +4,16 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project follows to [Ragnarök Versioning Convention](https://shor.cz/ragnarok_versioning_convention).
 
+## [UNRELEASED] Wither Config Version 1.1 Changelog
+
+### Added
+
+- Boat Jail Fix (Makes the Wither an area damage for boats, to prevent it from being trapped in a boat jail)
+- Configuration for:
+  - Boat Jail Fix
+  - Boat Jail Fix Tick Delay
+  - Boat Jail Fix Range
+
 ## Wither Config Version 1.0 Changelog - 2023-09-06
 
 ### Added

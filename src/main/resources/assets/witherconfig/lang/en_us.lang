@@ -37,3 +37,13 @@ witherconfig.general.common.skulls.explosionstrength=Explosion Strength
 witherconfig.general.common.skulls.explosionstrength.tooltip=The strength of the explosion of the skulls, affecting the size of the explosion and the damage it inflict
 witherconfig.general.common.skulls.effects=Effects
 witherconfig.general.common.skulls.effects.tooltip=The effects that the explosion of the skulls will inflict
+
+witherconfig.general.common.boatjailfix=Boat Jail Fix
+witherconfig.general.common.boatjailfix.tooltip=Configuration for the Boat Jail Fix
+
+witherconfig.general.common.boatjailfix.enabled=Enabled
+witherconfig.general.common.boatjailfix.enabled.tooltip=Whether or not the Boat Jail Fix is enabled
+witherconfig.general.common.boatjailfix.tickdelay=Tick Delay
+witherconfig.general.common.boatjailfix.tickdelay.tooltip=The delay in ticks between each area damage to boats around the Wither
+witherconfig.general.common.boatjailfix.range=Range
+witherconfig.general.common.boatjailfix.range.tooltip=The range in blocks of the area damage to boats around the Wither

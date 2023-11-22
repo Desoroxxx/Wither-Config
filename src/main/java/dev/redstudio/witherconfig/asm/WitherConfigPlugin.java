@@ -1,8 +1,10 @@
 package dev.redstudio.witherconfig.asm;
 
+import dev.redstudio.witherconfig.config.WitherConfigConfig;
 import net.minecraftforge.fml.relauncher.IFMLLoadingPlugin;
 import zone.rong.mixinbooter.IEarlyMixinLoader;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
@@ -38,6 +40,13 @@ public class WitherConfigPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader 
 
     @Override
     public List<String> getMixinConfigs() {
-        return Arrays.asList("mixins.witherconfig.json");
+        final List<String> mixins = new ArrayList<>();
+
+        mixins.add("mixins.witherconfig.json");
+
+        if (WitherConfigConfig.common.boatJailFix.enabled)
+            mixins.add("mixins.witherConfig.boatFix.json");
+
+        return mixins;
     }
 }
