@@ -42,7 +42,7 @@ public class WitherConfigPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader 
     public List<String> getMixinConfigs() {
         final List<String> mixins = new ArrayList<>();
 
-        mixins.add("mixins.witherconfig.json");
+        mixins.add("mixins.witherConfig.json");
 
         if (WitherConfigConfig.common.boatJailFix.enabled)
             mixins.add("mixins.witherConfig.boatFix.json");

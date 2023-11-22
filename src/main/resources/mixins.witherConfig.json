@@ -4,8 +4,6 @@
   "package": "dev.redstudio.witherconfig.mixin",
   "compatibilityLevel": "JAVA_8",
   "refmap": "mixins.witherconfig.refmap.json",
-  "client": [
-  ],
   "injectors": {
     "defaultRequire": 1
   },
