@@ -71,7 +71,7 @@ public abstract class EntityWitherMixin extends EntityMob {
         return 0;
     }
 
-    @Inject(method = "onLivingUpdate", at = @At(value = "FIELD", target = "Lnet/minecraft/world/World;isRemote:Z", shift = At.Shift.AFTER))
+    @Inject(method = "onLivingUpdate", at = @At(value = "HEAD"))
     private void newTargetFollowingLogic(final CallbackInfo callbackInfo) {
         if (world.isRemote || getWatchedTargetId(0) <= 0)
             return;

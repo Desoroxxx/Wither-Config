@@ -16,6 +16,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ### Internal
 
+- Changed the injection point of `newTargetFollowingLogic`
 - General Cleanup
 
 ## Wither Config Version 1.0 Changelog - 2023-09-06
