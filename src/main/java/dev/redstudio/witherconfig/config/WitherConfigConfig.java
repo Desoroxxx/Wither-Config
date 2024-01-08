@@ -27,7 +27,6 @@ public class WitherConfigConfig {
         public double movementSpeed = 0.6; // The "default movement speed of the Wither, it's following speed is "added" to it"
         public double followRange = 40; // Range for the Wither to look for it's target to follow it
         public double armor = 4;
-        public double verticalMovementSpeedMultiplier = 1;
 
         public final SummonSequence summonSequence = new SummonSequence();
         public final Skulls skulls = new Skulls();
