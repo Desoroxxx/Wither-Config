@@ -18,6 +18,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 - Changed the injection point of `newTargetFollowingLogic`
 - General Cleanup
+- Updated Gradle to 8.5
 
 ## Wither Config Version 1.0 Changelog - 2023-09-06
 
