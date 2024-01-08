@@ -14,6 +14,6 @@ import static dev.redstudio.witherconfig.ProjectConstants.*;
 //                                                                                                              /$$  \ $$
 //                                                                                                             |  $$$$$$/
 //                                                                                                              \______/
-@Mod(modid = ID, name = NAME, version = VERSION, updateJSON = "https://raw.githubusercontent.com/Desoroxxx/Wither-Config/main/update.json")
+@Mod(modid = ID, name = NAME, version = VERSION, updateJSON = "https://forge.curseupdate.com/910358/witherconfig")
 public final class WitherConfig {
 }
