@@ -14,6 +14,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
   - Boat Jail Fix Tick Delay
   - Boat Jail Fix Range
 
+### Fixed
+
+- Fixed Wither not breaking blocks under itself when `breakBlocksWhenTargetingPlayer` is on & player is under it making the player safe
+
 ### Internal
 
 - Changed the injection point of `newTargetFollowingLogic`

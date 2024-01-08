@@ -112,9 +112,12 @@ public abstract class EntityWitherMixin extends EntityMob {
 
             boolean flag = false;
 
+            // This prevent the player from being safe from the Wither by just being under it
+            final int desiredYOffset = world.getEntityByID(getWatchedTargetId(0)).posY < posY ? -1 : 0;
+
             for (int xOffset = -1; xOffset <= 1; ++xOffset) {
                 for (int zOffset = -1; zOffset <= 1; ++zOffset) {
-                    for (int yOffset = 0; yOffset <= 4; ++yOffset) {
+                    for (int yOffset = desiredYOffset; yOffset <= 4; ++yOffset) {
                         final int currentX = x + xOffset;
                         final int currentY = y + yOffset;
                         final int currentZ = z + zOffset;
