@@ -130,7 +130,7 @@ public abstract class EntityWitherMixin extends EntityMob {
                         final BlockPos blockPos = new BlockPos(currentX, currentY, currentZ);
                         final IBlockState blockState = this.world.getBlockState(blockPos);
 
-                        if (blockState.getBlock().canEntityDestroy(blockState, world, blockPos, this) && ForgeEventFactory.onEntityDestroyBlock(this, blockPos, blockState))
+                        if (((WitherConfigConfig.common.breakFluidsWhenTargetingPlayer && blockState.getMaterial().isLiquid()) || blockState.getBlock().canEntityDestroy(blockState, world, blockPos, this)) && ForgeEventFactory.onEntityDestroyBlock(this, blockPos, blockState))
                             flag = this.world.destroyBlock(blockPos, true) || flag;
                     }
                 }

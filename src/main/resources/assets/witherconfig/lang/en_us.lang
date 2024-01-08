@@ -17,6 +17,8 @@ witherconfig.general.common.followdistance=Follow Distance
 witherconfig.general.common.followdistance.tooltip=The target distance between the Wither and it's target
 witherconfig.general.common.breakblockswhentargetingplayer=Break Blocks when Targeting a Player
 witherconfig.general.common.breakblockswhentargetingplayer.tooltip=Whether or not the Wither should attempt to break blocks around it when targeting a player
+witherconfig.general.common.breakfluidswhentargetingplayer=Break Fluids when Targeting a Player
+witherconfig.general.common.breakfluidswhentargetingplayer.tooltip=Whether or not the Wither should attempt to break fluids around it when targeting a player, depends on "Break Blocks when Targeting a Player"
 
 witherconfig.general.common.summonsequence=Summon Sequence
 witherconfig.general.common.summonsequence.tooltip=Configuration for the Wither summon sequence
