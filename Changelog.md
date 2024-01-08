@@ -18,7 +18,9 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 - Changed the injection point of `newTargetFollowingLogic`
 - General Cleanup
-- Updated Gradle to 8.5
+- Switched from [RetroFuturaGradle](https://github.com/GTNewHorizons/RetroFuturaGradle) tags to [gmazzo](https://github.com/gmazzo) [gradle-buildconfig-plugin](https://github.com/gmazzo/gradle-buildconfig-plugin)
+- Switched to Gradle Kotlin DSL
+- Updated to Gradle 8.5
 
 ## Wither Config Version 1.0 Changelog - 2023-09-06
 

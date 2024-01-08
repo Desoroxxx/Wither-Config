@@ -1,10 +1,7 @@
 package dev.redstudio.witherconfig;
 
 import net.minecraftforge.fml.common.Mod;
-
-import static dev.redstudio.witherconfig.utils.ModReference.ID;
-import static dev.redstudio.witherconfig.utils.ModReference.NAME;
-import static dev.redstudio.witherconfig.utils.ModReference.VERSION;
+import static dev.redstudio.witherconfig.ProjectConstants.*;
 
 //   /$$      /$$ /$$   /$$     /$$                                  /$$$$$$                       /$$$$$$  /$$
 //  | $$  /$ | $$|__/  | $$    | $$                                 /$$__  $$                     /$$__  $$|__/

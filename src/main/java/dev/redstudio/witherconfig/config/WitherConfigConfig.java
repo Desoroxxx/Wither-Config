@@ -6,8 +6,8 @@ import net.minecraftforge.fml.client.event.ConfigChangedEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
-import static dev.redstudio.witherconfig.utils.ModReference.ID;
-import static dev.redstudio.witherconfig.utils.ModReference.NAME;
+import static dev.redstudio.witherconfig.ProjectConstants.ID;
+import static dev.redstudio.witherconfig.ProjectConstants.NAME;
 
 @Config(modid = ID, name = NAME)
 public class WitherConfigConfig {

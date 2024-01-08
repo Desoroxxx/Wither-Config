@@ -11,7 +11,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.ModifyArg;
 import org.spongepowered.asm.mixin.injection.Redirect;
 
-import static dev.redstudio.witherconfig.utils.ModReference.LOG;
+import static dev.redstudio.witherconfig.ProjectConstants.LOGGER;
 
 /**
  * @author Luna Lage (Desoroxxx)
@@ -48,7 +48,7 @@ public final class EntityWitherSkullMixin {
 
             // Make sure there are exactly three parts, otherwise the string is malformed
             if (parts.length != 3) {
-                LOG.error("Malformed potion effect config: {}", line);
+                LOGGER.error("Malformed potion effect config: {}", line);
                 return;
             }
 
@@ -59,7 +59,7 @@ public final class EntityWitherSkullMixin {
             if (potion != null)
                 entityLiving.addPotionEffect(new PotionEffect(potion, duration, level));
             else
-                LOG.error("Mob effect was not found {}", parts[0]);
+                LOGGER.error("Mob effect was not found {}", parts[0]);
         }
     }
 }
