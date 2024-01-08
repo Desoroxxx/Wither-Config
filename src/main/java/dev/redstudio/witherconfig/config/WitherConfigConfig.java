@@ -16,9 +16,10 @@ public class WitherConfigConfig {
 
     public static class Common {
 
-        public final SummonSequence summonSequence = new SummonSequence();
-        public final Skulls skulls = new Skulls();
-        public final BoatJailFix boatJailFix = new BoatJailFix();
+        public boolean breakBlocksWhenTargetingPlayer = false;
+
+        public float unarmoredFlyHeight = 5;
+        public float followDistance = 9;
 
         // The Wither attributes
         public double maxHealth = 300;
@@ -27,14 +28,14 @@ public class WitherConfigConfig {
         public double armor = 4;
         public double verticalMovementSpeedMultiplier = 1;
 
-        public float unarmoredFlyHeight = 5;
-        public float followDistance = 9;
-
-        public boolean breakBlocksWhenTargetingPlayer = false;
+        public final SummonSequence summonSequence = new SummonSequence();
+        public final Skulls skulls = new Skulls();
+        public final BoatJailFix boatJailFix = new BoatJailFix();
 
         public static class SummonSequence {
 
             public int length = 220;
+
             public float endExplosionStrength = 7;
         }
 
