@@ -103,6 +103,11 @@ public abstract class EntityWitherMixin extends EntityMob {
         }
     }
 
+    @Inject(method = "onLivingUpdate", at = @At(value = "RETURN"))
+    private void verticalSpeedMultiplier(final CallbackInfo callbackInfo) {
+        motionY *= WitherConfigConfig.common.verticalMovementSpeedMultiplier;
+    }
+
     @Unique
     private void wither_Config$destroyBlocks() {
         if (net.minecraftforge.event.ForgeEventFactory.getMobGriefingEvent(this.world, this)) {
