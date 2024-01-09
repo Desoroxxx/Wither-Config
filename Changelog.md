@@ -13,7 +13,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
   - Boat Jail Fix
   - Boat Jail Fix Tick Delay
   - Boat Jail Fix Range
-  - Break Fluids when Targeting a Player
+  - Break Fluids
 
 ### Fixed
 
