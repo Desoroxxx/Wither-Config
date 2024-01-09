@@ -1,6 +1,7 @@
 package dev.redstudio.witherconfig.mixin;
 
 import dev.redstudio.witherconfig.config.WitherConfigConfig;
+import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.boss.EntityWither;
@@ -18,6 +19,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.ModifyArg;
 import org.spongepowered.asm.mixin.injection.Redirect;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 /**
  * @author Luna Lage (Desoroxxx)
@@ -69,6 +71,12 @@ public abstract class EntityWitherMixin extends EntityMob {
     @Redirect(method = "onLivingUpdate", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/boss/EntityWither;getWatchedTargetId(I)I", ordinal = 0))
     private int disableVanillaTargetFollowingLogic(final EntityWither instance, int head) {
         return 0;
+    }
+
+    @Inject(method = "canDestroyBlock", at = @At(value = "HEAD"), cancellable = true)
+    private static void fluidBreakingCheck(final Block blockIn, final CallbackInfoReturnable<Boolean> booleanCallbackInfoReturnable) {
+        if (!WitherConfigConfig.common.breakLiquids && blockIn.getDefaultState().getMaterial().isLiquid())
+            booleanCallbackInfoReturnable.setReturnValue(false);
     }
 
     @Inject(method = "onLivingUpdate", at = @At(value = "HEAD"))
@@ -125,7 +133,7 @@ public abstract class EntityWitherMixin extends EntityMob {
                         final BlockPos blockPos = new BlockPos(currentX, currentY, currentZ);
                         final IBlockState blockState = this.world.getBlockState(blockPos);
 
-                        if (((WitherConfigConfig.common.breakFluidsWhenTargetingPlayer && blockState.getMaterial().isLiquid()) || blockState.getBlock().canEntityDestroy(blockState, world, blockPos, this)) && ForgeEventFactory.onEntityDestroyBlock(this, blockPos, blockState))
+                        if (blockState.getBlock().canEntityDestroy(blockState, world, blockPos, this) && ForgeEventFactory.onEntityDestroyBlock(this, blockPos, blockState))
                             flag = this.world.destroyBlock(blockPos, true) || flag;
                     }
                 }

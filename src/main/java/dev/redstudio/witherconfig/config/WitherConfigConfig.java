@@ -17,7 +17,7 @@ public class WitherConfigConfig {
     public static class Common {
 
         public boolean breakBlocksWhenTargetingPlayer = false;
-        public boolean breakFluidsWhenTargetingPlayer = true; // Default it's true as the Wither breaking fluids is vanilla behavior
+        public boolean breakLiquids = true; // Default it's true as the Wither breaking fluids is vanilla behavior
 
         public float unarmoredFlyHeight = 5;
         public float followDistance = 9;
