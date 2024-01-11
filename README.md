@@ -10,11 +10,11 @@
 
 # Wither Config
 
-Wither Config allows you to adjust the Wither's stats for a tailored boss experience.
+Wither Config allows you to adjust the Wither's stats and behavior for a tailored boss experience.
 
-This also fixes the Minecraft bug where the Wither overshoots the distance between it, and its target making it always go towards its target instead of stopping nine blocks away.
+This also fixes a Minecraft bug where the Wither overshoots the distance between it, and its target making it always go towards its target instead of stopping nine blocks away.
 
-This mod was commissioned for the [Trepidation modpack](https://curseforge.com/minecraft/modpacks/trepidation)
+This mod was commissioned for the [Trepidation modpack](https://curseforge.com/minecraft/modpacks/trepidation) by [CalaMariGold](https://www.curseforge.com/members/calamarigold/projects).
 
 Available Configs:
 - The Wither health
@@ -25,12 +25,16 @@ Available Configs:
 - The Wither unarmored fly height
 - The Wither summoning sequence length
 - The Wither summoning sequence end explosion strength
+- Whether the Wither should attempt to break blocks around it when targeting a player
+- The Wither ability to break fluids
 - The Wither skulls damage
 - The Wither skulls magic damage
 - The Wither skulls heal towards the Wither when getting a kill
 - The Wither skulls explosion strength
 - The Wither skulls potion effects
-- Whether the Wither should attempt to break blocks around it when targeting a player
+- The boat jail fix
+- The boat jail fix tick delay
+- The boat jail fix range
 
 *Something is missing? Go on the issue page and suggest it*
 
