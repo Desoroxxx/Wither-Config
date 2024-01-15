@@ -110,12 +110,11 @@ java {
 }
 
 tasks.processResources.configure {
-	inputs.property("name", project.name)
 	inputs.property("version", project.version)
 	inputs.property("id", id)
 
 	filesMatching("mcmod.info") {
-		expand(mapOf("name" to project.name, "version" to project.version, "id" to id))
+		expand(mapOf("version" to project.version, "id" to id))
 	}
 }
 
