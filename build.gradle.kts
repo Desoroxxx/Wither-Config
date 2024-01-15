@@ -52,7 +52,7 @@ dependencies {
 buildConfig {
 	packageName("${project.group}.${id}")
 	className("ProjectConstants")
-	documentation.set("This class defines constants for Wither Config.\n<p>\nThey are automatically updated by Gradle, except for the name as Gradle would remove spaces.")
+	documentation.set("This class defines constants for Wither Config.\n<p>\nThey are automatically updated by Gradle")
 
 	useJavaOutput()
 	buildConfigField("String", "ID", provider { """"${id}"""" })
