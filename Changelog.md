@@ -6,7 +6,6 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## Wither Config Version 1.1.1 Changelog - 2024-01-16
 
-
 ### Fixed
 
 - Fix mod name having a `-` instead of a space
