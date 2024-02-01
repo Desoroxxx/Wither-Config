@@ -61,7 +61,7 @@ public final class WitherConfigConfig {
     }
 
     @Mod.EventBusSubscriber(modid = ID)
-    public static class ConfigEventHandler {
+    public static final class ConfigEventHandler {
 
         @SubscribeEvent
         public static void onConfigChanged(final ConfigChangedEvent.OnConfigChangedEvent onConfigChangedEvent) {
