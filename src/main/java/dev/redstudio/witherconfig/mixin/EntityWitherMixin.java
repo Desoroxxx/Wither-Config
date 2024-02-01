@@ -23,19 +23,23 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 /**
  * @author Luna Lage (Desoroxxx)
- * @since 1
+ * @since 1.0
  */
 @Mixin(EntityWither.class)
 public abstract class EntityWitherMixin extends EntityMob {
+
+    private EntityWitherMixin(final World world) {
+        super(world);
+    }
 
     @Shadow public abstract int getWatchedTargetId(final int head);
 
     @Shadow public abstract boolean isArmored();
 
-    @Shadow private int blockBreakCounter;
-
-    private EntityWitherMixin(final World world) {
-        super(world);
+    @Inject(method = "canDestroyBlock", at = @At(value = "HEAD"), cancellable = true)
+    private static void fluidBreakingCheck(final Block blockIn, final CallbackInfoReturnable<Boolean> booleanCallbackInfoReturnable) {
+        if (!WitherConfigConfig.common.breakLiquids && blockIn.getDefaultState().getMaterial().isLiquid())
+            booleanCallbackInfoReturnable.setReturnValue(false);
     }
 
     @ModifyArg(method = "applyEntityAttributes", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/ai/attributes/IAttributeInstance;setBaseValue(D)V", ordinal = 0))
@@ -73,12 +77,6 @@ public abstract class EntityWitherMixin extends EntityMob {
         return 0;
     }
 
-    @Inject(method = "canDestroyBlock", at = @At(value = "HEAD"), cancellable = true)
-    private static void fluidBreakingCheck(final Block blockIn, final CallbackInfoReturnable<Boolean> booleanCallbackInfoReturnable) {
-        if (!WitherConfigConfig.common.breakLiquids && blockIn.getDefaultState().getMaterial().isLiquid())
-            booleanCallbackInfoReturnable.setReturnValue(false);
-    }
-
     @Inject(method = "onLivingUpdate", at = @At(value = "HEAD"))
     private void newTargetFollowingLogic(final CallbackInfo callbackInfo) {
         if (world.isRemote || getWatchedTargetId(0) <= 0)
@@ -90,7 +88,7 @@ public abstract class EntityWitherMixin extends EntityMob {
             return;
 
         if (target instanceof EntityPlayer && WitherConfigConfig.common.breakBlocksWhenTargetingPlayer)
-            wither_Config$destroyBlocks();
+            wither_Config$destroyBlocks(target.posY);
 
         final double movementSpeed = WitherConfigConfig.common.movementSpeed;
 
@@ -111,37 +109,44 @@ public abstract class EntityWitherMixin extends EntityMob {
         }
     }
 
+    /**
+     * Destroys all blocks that the Wither can destroy around it.
+     * <p>
+     * <b>Warning:</b> This method does not check for sideness itself, it should only be called on the server side.
+     *
+     * @param targetY The Y position of the entity being targeted by the Wither
+     */
     @Unique
-    private void wither_Config$destroyBlocks() {
-        if (net.minecraftforge.event.ForgeEventFactory.getMobGriefingEvent(this.world, this)) {
-            final int x = MathHelper.floor(posX);
-            final int y = MathHelper.floor(posY);
-            final int z = MathHelper.floor(posZ);
+    private void wither_Config$destroyBlocks(final double targetY) {
+        if (!ForgeEventFactory.getMobGriefingEvent(world, this))
+            return;
 
-            boolean flag = false;
+        final int x = MathHelper.floor(posX);
+        final int y = MathHelper.floor(posY);
+        final int z = MathHelper.floor(posZ);
 
-            // This prevent the player from being safe from the Wither by just being under it
-            final int desiredYOffset = world.getEntityByID(getWatchedTargetId(0)).posY < posY ? -1 : 0;
+        boolean playSound = false;
 
-            for (int xOffset = -1; xOffset <= 1; ++xOffset) {
-                for (int zOffset = -1; zOffset <= 1; ++zOffset) {
-                    for (int yOffset = desiredYOffset; yOffset <= 4; ++yOffset) {
-                        final int currentX = x + xOffset;
-                        final int currentY = y + yOffset;
-                        final int currentZ = z + zOffset;
+        // This prevents the player from being safe from the Wither by just being under it
+        final int desiredYOffset = targetY < posY ? -1 : 0;
 
-                        final BlockPos blockPos = new BlockPos(currentX, currentY, currentZ);
-                        final IBlockState blockState = this.world.getBlockState(blockPos);
+        for (int xOffset = -1; xOffset <= 1; ++xOffset) {
+            for (int zOffset = -1; zOffset <= 1; ++zOffset) {
+                for (int yOffset = desiredYOffset; yOffset <= 4; ++yOffset) {
+                    final int currentX = x + xOffset;
+                    final int currentY = y + yOffset;
+                    final int currentZ = z + zOffset;
 
-                        if (blockState.getBlock().canEntityDestroy(blockState, world, blockPos, this) && ForgeEventFactory.onEntityDestroyBlock(this, blockPos, blockState))
-                            flag = this.world.destroyBlock(blockPos, true) || flag;
-                    }
+                    final BlockPos blockPos = new BlockPos(currentX, currentY, currentZ);
+                    final IBlockState blockState = world.getBlockState(blockPos);
+
+                    if (blockState.getBlock().canEntityDestroy(blockState, world, blockPos, this) && ForgeEventFactory.onEntityDestroyBlock(this, blockPos, blockState))
+                        playSound = world.destroyBlock(blockPos, true) || playSound;
                 }
             }
-
-            if (flag) {
-                this.world.playEvent(null, 1022, new BlockPos(this), 0);
-            }
         }
+
+        if (playSound)
+            world.playEvent(null, 1022, new BlockPos(this), 0);
     }
 }

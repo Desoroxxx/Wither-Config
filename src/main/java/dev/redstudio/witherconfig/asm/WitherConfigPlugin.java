@@ -5,14 +5,13 @@ import net.minecraftforge.fml.relauncher.IFMLLoadingPlugin;
 import zone.rong.mixinbooter.IEarlyMixinLoader;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
 @IFMLLoadingPlugin.Name()
 @IFMLLoadingPlugin.MCVersion("1.12.2")
 @IFMLLoadingPlugin.TransformerExclusions("dev.redstudio.witherconfig.asm")
-public class WitherConfigPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader {
+public final class WitherConfigPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader {
 
     @Override
     public String[] getASMTransformerClass() {
@@ -30,7 +29,7 @@ public class WitherConfigPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader 
     }
 
     @Override
-    public void injectData(Map<String, Object> data) {
+    public void injectData(final Map<String, Object> data) {
     }
 
     @Override

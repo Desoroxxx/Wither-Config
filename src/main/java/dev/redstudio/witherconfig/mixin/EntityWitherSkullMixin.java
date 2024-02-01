@@ -15,7 +15,7 @@ import static dev.redstudio.witherconfig.ProjectConstants.LOGGER;
 
 /**
  * @author Luna Lage (Desoroxxx)
- * @since 1
+ * @since 1.0
  */
 @Mixin(EntityWitherSkull.class)
 public final class EntityWitherSkullMixin {
@@ -43,10 +43,10 @@ public final class EntityWitherSkullMixin {
     @Redirect(method = "onImpact", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/EntityLivingBase;addPotionEffect(Lnet/minecraft/potion/PotionEffect;)V"))
     private void redirectAddPotionEffect(final EntityLivingBase entityLiving, final PotionEffect potionEffect, @Local int durationMultiplier) {
         for (final String line : WitherConfigConfig.common.skulls.effects) {
-            // Split the string based on the delimiter ';'
             final String[] parts = line.split(";");
 
             // Make sure there are exactly three parts, otherwise the string is malformed
+            // Since we need the effect, duration, and level to apply a potion effect
             if (parts.length != 3) {
                 LOGGER.error("Malformed potion effect config: {}", line);
                 return;
@@ -59,7 +59,7 @@ public final class EntityWitherSkullMixin {
             if (potion != null)
                 entityLiving.addPotionEffect(new PotionEffect(potion, duration, level));
             else
-                LOGGER.error("Mob effect was not found {}", parts[0]);
+                LOGGER.error("Potion/effect was not found {}", parts[0]);
         }
     }
 }

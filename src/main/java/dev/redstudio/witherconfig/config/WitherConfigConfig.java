@@ -16,21 +16,18 @@ public final class WitherConfigConfig {
 
     public static class Common {
 
+        public final SummonSequence summonSequence = new SummonSequence();
+        public final Skulls skulls = new Skulls();
+        public final BoatJailFix boatJailFix = new BoatJailFix();
         public boolean breakBlocksWhenTargetingPlayer = false;
         public boolean breakLiquids = true; // Default it's true as the Wither breaking fluids is vanilla behavior
-
         public float unarmoredFlyHeight = 5;
         public float followDistance = 9;
-
         // The Wither attributes
         public double maxHealth = 300;
         public double movementSpeed = 0.6; // The "default movement speed of the Wither, it's following speed is "added" to it"
         public double followRange = 40; // Range for the Wither to look for it's target to follow it
         public double armor = 4;
-
-        public final SummonSequence summonSequence = new SummonSequence();
-        public final Skulls skulls = new Skulls();
-        public final BoatJailFix boatJailFix = new BoatJailFix();
 
         public static class SummonSequence {
 

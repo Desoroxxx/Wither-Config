@@ -27,8 +27,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 @Mixin(EntityWither.class)
 public final class BoatJailFixMixin extends EntityMob {
 
-    @Unique
-    private byte wither_Config$areaBoatDamageTick;
+    @Unique private byte wither_Config$areaBoatDamageTick;
 
     private BoatJailFixMixin(final World world) {
         super(world);
@@ -46,7 +45,7 @@ public final class BoatJailFixMixin extends EntityMob {
 
         wither_Config$areaBoatDamageTick = WitherConfigConfig.common.boatJailFix.tickDelay;
 
-        final int range =  WitherConfigConfig.common.boatJailFix.range;
+        final int range = WitherConfigConfig.common.boatJailFix.range;
 
         for (final EntityBoat nearbyBoatEntity : world.getEntitiesWithinAABB(EntityBoat.class, new AxisAlignedBB(posX - range, posY - range, posZ - range, posX + range, posY + range, posZ + range))) {
             nearbyBoatEntity.attackEntityFrom(DamageSource.WITHER, 1);
