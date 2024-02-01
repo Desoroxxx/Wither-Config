@@ -10,7 +10,7 @@ import static dev.redstudio.witherconfig.ProjectConstants.ID;
 import static dev.redstudio.witherconfig.ProjectConstants.NAME;
 
 @Config(modid = ID, name = NAME)
-public class WitherConfigConfig {
+public final class WitherConfigConfig {
 
     public static final Common common = new Common();
 
