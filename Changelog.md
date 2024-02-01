@@ -6,6 +6,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## Wither Config Version 1.1.2 Changelog - 2024-02-01
 
+### Fixed
+
+- Fixed config which may break in certain conditions while modifying it in game
+
 ### Internal
 
 - Updated [RetroFuturaGradle](https://github.com/GTNewHorizons/RetroFuturaGradle) to version 1.3.30
