@@ -57,9 +57,9 @@ body:
     validations:
       required: false
   - type: input
-    id: wither-config-version
+    id: {LOWERCASE NAME WITHOUT SPACES}-version
     attributes:
-      label: Wither Config Version
+      label: `{NAME WITH SPACES}` Version
       placeholder: "1.0"
     validations:
       required: true
@@ -74,7 +74,14 @@ body:
     id: mixin-booter-version
     attributes:
       label: MixinBooter Version
-      placeholder: "8.9"
+      placeholder: "8.4"
+    validations:
+      required: true
+  - type: input
+    id: config-anytime-version
+    attributes:
+      label: ConfigAnytime Version
+      placeholder: "1.0"
     validations:
       required: true
   - type: input
@@ -116,7 +123,7 @@ body:
     id: terms
     attributes:
       label: Code of Conduct
-      description: By submitting this issue, you agree to follow our [Code of Conduct](https://github.com/Cubed-Development/Modern-Warfare-Cubed/blob/main/CODE_OF_CONDUCT.md)
+      description: By submitting this issue, you agree to follow our [Code of Conduct](https://github.com/Red-Studio-Ragnarok/Commons/blob/main/Ragnar%C3%B6k%20Code%20of%20Conduct.md)
       options:
         - label: I agree to follow this project's Code of Conduct
           required: true

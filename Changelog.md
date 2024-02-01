@@ -16,6 +16,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 - Renamed `EventHandler` to `ConfigEventHandler`
 - Updated [RetroFuturaGradle](https://github.com/GTNewHorizons/RetroFuturaGradle) to version 1.3.30
 - Updated [gradle-buildconfig-plugin](https://github.com/gmazzo/gradle-buildconfig-plugin) to version 5.3.5
+- Updated [foojay-resolver](https://github.com/gradle/foojay-toolchains) to version 0.8.0
 
 ## Wither Config Version 1.1.1 Changelog - 2024-01-16
 
