@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project follows to [Ragnarök Versioning Convention](https://shor.cz/ragnarok_versioning_convention).
 
+## Wither Config Version 1.1.2 Changelog - 2024-02-01
+
+### Internal
+
+- Updated [RetroFuturaGradle](https://github.com/GTNewHorizons/RetroFuturaGradle) to version 1.3.30
+
 ## Wither Config Version 1.1.1 Changelog - 2024-01-16
 
 ### Fixed
