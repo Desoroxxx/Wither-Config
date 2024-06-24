@@ -20,10 +20,13 @@ public final class WitherConfigConfig {
         public final Healing healing = new Healing();
         public final Skulls skulls = new Skulls();
         public final BoatJailFix boatJailFix = new BoatJailFix();
+
         public boolean breakBlocksWhenTargetingPlayer = false;
         public boolean breakLiquids = true; // Default it's true as the Wither breaking fluids is vanilla behavior
+
         public float unarmoredFlyHeight = 5;
         public float followDistance = 9;
+
         // The Wither attributes
         public double maxHealth = 300;
         public double movementSpeed = 0.6; // The "default movement speed of the Wither, it's following speed is "added" to it"
@@ -69,8 +72,10 @@ public final class WitherConfigConfig {
 
         @SubscribeEvent
         public static void onConfigChanged(final ConfigChangedEvent.OnConfigChangedEvent onConfigChangedEvent) {
-            if (onConfigChangedEvent.getModID().equals(ID))
-                ConfigManager.sync(ID, Config.Type.INSTANCE);
+            if (!onConfigChangedEvent.getModID().equals(ID))
+                return;
+
+            ConfigManager.sync(ID, Config.Type.INSTANCE);
         }
     }
 }
