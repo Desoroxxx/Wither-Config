@@ -10,6 +10,7 @@ and this project follows the [Ragnarök Versioning Convention](https://github.co
 ### Internal
 
 - General cleanup
+- Updated [RetroFuturaGradle](https://github.com/GTNewHorizons/RetroFuturaGradle) to version 1.4.0
 
 ## Wither Config Version 1.1.2 Changelog - 2024-02-01
 
