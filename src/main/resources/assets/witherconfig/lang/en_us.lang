@@ -18,6 +18,14 @@ witherconfig.general.common.breakblockswhentargetingplayer.tooltip=Whether or no
 witherconfig.general.common.breakliquids=Break Liquids
 witherconfig.general.common.breakliquids.tooltip=Whether or not the Wither should be able to break liquids
 
+witherconfig.general.common.healing=Healing
+witherconfig.general.common.healing.tooltip=Configuration for the Wither healing
+
+witherconfig.general.common.healing.invulnerablehealing=Invulnerable Healing
+witherconfig.general.common.healing.invulnerablehealing.tooltip=The amount of health the Wither will heal itself by each 10 ticks while invulnerable
+witherconfig.general.common.healing.vulnerablehealing=Vulnerable Healing
+witherconfig.general.common.healing.vulnerablehealing.tooltip=The amount of health the Wither will heal itself by each 20 ticks while vulnerable
+
 witherconfig.general.common.summonsequence=Summon Sequence
 witherconfig.general.common.summonsequence.tooltip=Configuration for the Wither summon sequence
 

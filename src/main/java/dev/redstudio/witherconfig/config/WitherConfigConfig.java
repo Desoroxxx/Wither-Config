@@ -17,6 +17,7 @@ public final class WitherConfigConfig {
     public static class Common {
 
         public final SummonSequence summonSequence = new SummonSequence();
+        public final Healing healing = new Healing();
         public final Skulls skulls = new Skulls();
         public final BoatJailFix boatJailFix = new BoatJailFix();
         public boolean breakBlocksWhenTargetingPlayer = false;
@@ -34,6 +35,12 @@ public final class WitherConfigConfig {
             public int length = 220;
 
             public float endExplosionStrength = 7;
+        }
+
+        public static class Healing {
+
+            public float invulnerableHealing = 10;
+            public float vulnerableHealing = 1;
         }
 
         public static class Skulls {

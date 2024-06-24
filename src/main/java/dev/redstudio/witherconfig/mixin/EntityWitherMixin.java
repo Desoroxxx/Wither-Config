@@ -72,6 +72,16 @@ public abstract class EntityWitherMixin extends EntityMob {
         return WitherConfigConfig.common.summonSequence.endExplosionStrength;
     }
 
+    @ModifyArg(method = "updateAITasks", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/boss/EntityWither;heal(F)V", ordinal = 0))
+    private float changeInvulnerableHealing(final float original) {
+        return WitherConfigConfig.common.healing.invulnerableHealing;
+    }
+
+    @ModifyArg(method = "updateAITasks", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/boss/EntityWither;heal(F)V", ordinal = 1))
+    private float changeVulnerableHealing(final float original) {
+        return WitherConfigConfig.common.healing.vulnerableHealing;
+    }
+
     @Redirect(method = "onLivingUpdate", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/boss/EntityWither;getWatchedTargetId(I)I", ordinal = 0))
     private int disableVanillaTargetFollowingLogic(final EntityWither instance, int head) {
         return 0;

@@ -35,6 +35,8 @@ Available Configs:
 - The boat jail fix
 - The boat jail fix tick delay
 - The boat jail fix range
+- Invulnerable Healing
+- Vulnerable Healing
 
 *Something is missing? Go on the issue page and suggest it*
 
