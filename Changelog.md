@@ -10,6 +10,7 @@ and this project follows the [Ragnarök Versioning Convention](https://github.co
 ### Internal
 
 - General cleanup
+- Updated to [Gradle](https://gradle.org) 8.9-rc-1
 - Updated [RetroFuturaGradle](https://github.com/GTNewHorizons/RetroFuturaGradle) to version 1.4.0
 - Updated the `gradle.properties`
 
