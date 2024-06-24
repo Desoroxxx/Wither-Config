@@ -7,6 +7,11 @@ and this project follows the [Ragnarök Versioning Convention](https://github.co
 
 ## Wither Config Version 1.2 Changelog - 2024-06-24
 
+### Changed
+
+- Updated dependencies:
+  - Requires MixinBooter 8.6 and up
+
 ### Internal
 
 - General cleanup

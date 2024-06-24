@@ -17,6 +17,6 @@ import static dev.redstudio.witherconfig.ProjectConstants.VERSION;
 //                                                                                                              /$$  \ $$
 //                                                                                                             |  $$$$$$/
 //                                                                                                              \______/
-@Mod(modid = ID, name = NAME, version = VERSION, updateJSON = "https://forge.curseupdate.com/910358/witherconfig")
+@Mod(modid = ID, name = NAME, version = VERSION, dependencies = "required-after:mixinbooter@[8.6,)", updateJSON = "https://forge.curseupdate.com/910358/witherconfig")
 public final class WitherConfig {
 }
