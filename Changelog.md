@@ -11,6 +11,7 @@ and this project follows the [Ragnarök Versioning Convention](https://github.co
 
 - General cleanup
 - Updated [RetroFuturaGradle](https://github.com/GTNewHorizons/RetroFuturaGradle) to version 1.4.0
+- Updated the `gradle.properties`
 
 ## Wither Config Version 1.1.2 Changelog - 2024-02-01
 
