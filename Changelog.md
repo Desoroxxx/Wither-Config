@@ -18,6 +18,10 @@ and this project follows the [Ragnarök Versioning Convention](https://github.co
 - Updated dependencies:
   - Requires MixinBooter 8.6 and up
 
+### Fixed
+
+- Fixed a typo in the Heal On Kill tooltip
+
 ### Internal
 
 - General cleanup
