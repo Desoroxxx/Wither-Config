@@ -37,7 +37,7 @@ repositories {
 
 dependencies {
 	annotationProcessor("org.ow2.asm", "asm-debug-all", "5.2")
-	annotationProcessor("com.google.guava", "guava", "32.1.2-jre")
+	annotationProcessor("com.google.guava", "guava", "32.1.3-jre")
 	annotationProcessor("com.google.code.gson", "gson", "2.8.9")
 
 	val mixinBooter: String = modUtils.enableMixins("zone.rong:mixinbooter:10.2", "mixins.${id}.refmap.json") as String
