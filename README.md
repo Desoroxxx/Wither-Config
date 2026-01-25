@@ -1,3 +1,5 @@
+# Moved to [Tangled](https://tangled.org/desoroxxx.redstudio.dev/Wither-Config)
+
 [![Curse Forge](https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/cozy/available/curseforge_vector.svg)](https://www.curseforge.com/minecraft/mc-mods/witherconfig)
 [![Modrinth](https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/cozy/available/modrinth_vector.svg)](https://modrinth.com/mod/witherconfig)
 
